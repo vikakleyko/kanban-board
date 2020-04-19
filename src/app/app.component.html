@@ -1,0 +1,76 @@
+<h1>{{name }}</h1>
+  <section>
+    <div class="stage">
+      <h2>
+        Backlog
+      </h2>
+      <div *ngIf="selectedTask && selectedTask.stage === 'Backlog'">
+        <button class="btn-forward" (click)="changeStage('To Do')">Forward</button>
+        <button class="btn-delete" (click)="removeTask()">Delete</button>
+      </div>
+      <div *ngFor="let item of backlogTasks">
+        <div class="task" [class.active]="item === selectedTask" (click)="selectTask(item)">{{item.name}}</div>
+      </div>
+      <button class="btn-add" *ngIf="activeStage !== 'Backlog'" (click)="addTask('Backlog')">Add Task</button>
+      <div *ngIf="showInput && activeStage === 'Backlog'">
+        <input [(ngModel)]="newTask" type="text" />
+        <button class="btn-confirm" (click)="confirmAdd()">Confirm</button>
+      </div>
+    </div>
+
+    <div class="stage">
+      <h2>
+        To Do
+      </h2>
+      <div *ngIf="selectedTask && selectedTask.stage === 'To Do'">
+        <button class="btn-back"  (click)="changeStage('Backlog')">Back</button>
+        <button class="btn-forward" (click)="changeStage('Ongoing')">Forward</button>
+        <button class="btn-delete" (click)="removeTask()">Delete</button>
+      </div>
+      <div *ngFor="let item of toDoTasks">
+        <div class="task" [class.active]="item === selectedTask" (click)="selectTask(item)">{{item.name}}</div>
+      </div>
+      <button class="btn-add" *ngIf="activeStage !== 'To Do'" (click)="addTask('To Do')">Add Task</button>
+      <div *ngIf="showInput  && activeStage === 'To Do'">
+        <input [(ngModel)]="newTask" type="text" />
+        <button class="btn-confirm" (click)="confirmAdd()">Confirm</button>
+      </div>
+    </div>
+
+    <div class="stage">
+      <h2>
+        Ongoing
+      </h2>
+      <div *ngIf="selectedTask  && selectedTask.stage === 'Ongoing'">
+        <button class="btn-back" (click)="changeStage('To Do')">Back</button>
+        <button class="btn-forward" (click)="changeStage('Done')">Forward</button>
+        <button class="btn-delete" (click)="removeTask()">Delete</button>
+      </div>
+      <div *ngFor="let item of ongoingTasks">
+        <div class="task" [class.active]="item === selectedTask" (click)="selectTask(item)">{{item.name}}</div>
+      </div>
+      <button class="btn-add" *ngIf="activeStage !== 'Ongoing'" (click)="addTask('Ongoing')">Add Task</button>
+      <div *ngIf="showInput && activeStage === 'Ongoing'">
+        <input [(ngModel)]="newTask" type="text" />
+        <button class="btn-confirm" (click)="confirmAdd()">Confirm</button>
+      </div>
+    </div>
+
+    <div class="stage">
+      <h2>
+        Done
+      </h2> <div *ngIf="selectedTask && selectedTask.stage === 'Done'">
+      <button class="btn-back" (click)="changeStage('Ongoing')">Back</button>
+      <button class="btn-delete" (click)="removeTask()">Delete</button>
+    </div>
+      <div *ngFor="let item of doneTasks">
+        <div class="task" [class.active]="item === selectedTask" (click)="selectTask(item)">{{item.name}}</div>
+      </div>
+      <button class="btn-add" *ngIf="activeStage !== 'Done'" (click)="addTask('Done')">Add Task</button>
+      <div *ngIf="showInput  && activeStage === 'Done'">
+        <input [(ngModel)]="newTask" type="text" />
+        <button class="btn-confirm" (click)="confirmAdd()">Confirm</button>
+      </div>
+    </div>
+  </section>
+

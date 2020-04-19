@@ -1,0 +1,73 @@
+p {
+  font-family: Lato;
+}
+h1{
+  text-align: center;
+}
+section{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.stage{
+  width: -webkit-fill-available;
+  border-radius: 10px;
+  height: 400px;
+  margin: 20px;
+  background: #efebeb;
+  border: 1px solid #d6d2d2;
+  text-align: center;
+}
+.task{
+  cursor: pointer;
+  margin: 25px 10px;
+  padding: 15px;
+  background: white;
+  border: 1px solid #bbb6b6;
+  border-radius: 5px;
+}
+.btn-add{
+  background: green;
+  color: white;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.btn-delete{
+  color: white;
+  background: red;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.btn-forward{
+  background: blue;
+  color: white;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.btn-back{
+  background: #0789f1;
+  color: white;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.btn-confirm{
+  background: darkorange;
+  color: white;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+input{
+  margin: 25px 10px;
+  padding: 15px 0;
+  border: 1px solid #bbb6b6;
+  border-radius: 5px;
+}
+.active{
+  background: darkblue;
+  color: white;
+}
