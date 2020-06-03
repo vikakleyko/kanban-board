@@ -1,5 +1,5 @@
 # Danban-board
-Kanban board built with Angular
+Kanban board application built with Angular
 
 # Description 
 A Kanban board is a tool for workflow visualization and one of the key components of the Kanban method. Use this tool to create, 
