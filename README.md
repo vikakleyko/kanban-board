@@ -1,4 +1,4 @@
-# Danban-board
+# Kanban-board
 Kanban board application built with Angular
 
 # Description 
